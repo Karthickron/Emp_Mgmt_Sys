@@ -37,14 +37,14 @@ const Dashboard = ({ employees }) => {
     }).length;
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100 p-8">
         <div className="bg-white rounded-xl shadow-md p-6 flex justify-evenly items-center">
       <h2 className="text-3xl font-bold mb-8 text-gray-700">Employee Dashboard</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white shadow rounded-lg p-6">
-            <p className="text-gray-500">Total Employees</p>
-            <h2 className="text-3xl font-bold">{totalEmployees}</h2>
-        </div>
+        <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border-l-4 border-blue-500">
+  <p className="text-gray-500 text-sm">Total Employees</p>
+  <h2 className="text-4xl font-bold text-blue-600">{totalEmployees}</h2>
+</div>
 
         <div className="bg-white shadow rounded-lg p-6">
             <p className="text-gray-500">Active Employees</p>
