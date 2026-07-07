@@ -112,8 +112,8 @@ const AddEmployee = ({ employees, setEmployees }) => {
 
         <input
             type="date"
-            name="dob"
-            value={employee.dob}
+            name="joining_date"
+            value={employee.joining_date}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
