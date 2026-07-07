@@ -43,15 +43,25 @@ const AddEmployee = ({ employees, setEmployees }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-8 bg-white shadow-lg rounded-lg p-8">
+    <div className="max-w-6xl mx-auto mt-10 bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
 
-      <h2 className="text-3xl font-bold mb-6">
-        Add Employee
-      </h2>
+      <div className="bg-gradient-to-r from-blue-700 to-indigo-700 p-6">
+        <h2 className="text-4xl font-bold text-white">
+          Add New Employee
+        </h2>
+
+        <p className="text-blue-100 mt-2">
+          Fill all employee information below.
+        </p>
+      </div>
+
+      <div className="p-8">
+
+    </div>
 
       <form
         onSubmit={handleSubmit}
-        className="grid grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
 
         <input
@@ -106,57 +116,58 @@ const AddEmployee = ({ employees, setEmployees }) => {
         </select>
 
         <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
             Date of Birth
-        </label>
+          </label>
 
-        <input
+          <input
             type="date"
             name="dob"
             value={employee.dob}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+            className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          />
         </div>
-        <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-            Joining Date
-        </label>
 
-        <input
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Joining Date
+          </label>
+
+          <input
             type="date"
-            name="dob"
+            name="joining_date"
             value={employee.joining_date}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+            className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          />
         </div>
 
         <div>
-  <label className="block text-sm font-medium text-gray-700 mb-2">
-    Designation <span className="text-red-500">*</span>
-  </label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Designation <span className="text-red-500">*</span>
+          </label>
 
-    <select
-        name="designation"
-        value={employee.designation}
-        onChange={handleChange}
-        className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-    >
-        <option value="">Select Designation</option>
-        <option value="Software Developer">Software Developer</option>
-        <option value="Senior Software Developer">Senior Software Developer</option>
-        <option value="Manager">Manager</option>
-        <option value="Senior Manager">Senior Manager</option>
-        <option value="Technology Architect">Technology Architect</option>
-        <option value="Product Manager">Product Manager</option>
-    </select>
-    </div>
+          <select
+              name="designation"
+              value={employee.designation}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          >
+              <option value="">Select Designation</option>
+              <option value="Software Developer">Software Developer</option>
+              <option value="Senior Software Developer">Senior Software Developer</option>
+              <option value="Manager">Manager</option>
+              <option value="Senior Manager">Senior Manager</option>
+              <option value="Technology Architect">Technology Architect</option>
+              <option value="Product Manager">Product Manager</option>
+          </select>
+        </div>
 
-            <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-            Manager <span className="text-red-500">*</span>
-        </label>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Manager <span className="text-red-500">*</span>
+            </label>
 
         <input
             type="text"
@@ -237,7 +248,7 @@ const AddEmployee = ({ employees, setEmployees }) => {
   </select>
 </div>
         <button
-          className="col-span-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+          className="md:col-span-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-4 rounded-xl text-lg font-semibold hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
         >
           Save Employee
         </button>

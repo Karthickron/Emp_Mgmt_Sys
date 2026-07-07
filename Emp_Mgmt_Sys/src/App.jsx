@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
 import EmployeeList from "./EmployeeList";
 import AddEmployee from "./AddEmployee";
+import ViewEmployee from "./ViewEmployee";
+import EditEmployee from "./EditEmployee";
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -43,9 +45,24 @@ function App() {
             <AddEmployee
               employees={employees}
               setEmployees={setEmployees}
-          />
-        }
-      />
+            />
+          }
+        />
+
+        <Route
+          path="/view/:id"
+          element={<ViewEmployee employees={employees} />}
+        />
+
+        <Route
+          path="/edit/:id"
+          element={
+            <EditEmployee
+              employees={employees}
+              setEmployees={setEmployees}
+            />
+          }
+        />
       </Routes>
     </>
   );

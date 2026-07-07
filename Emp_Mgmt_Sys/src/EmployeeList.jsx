@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 const EmployeeList = ({ employees, setEmployees }) => {
   const navigate = useNavigate();
  
- const handleView = (employee) => {
-    console.log("View:", employee);
-  };
- 
-  const handleEdit = (employee) => {
-    console.log("Edit:", employee);
-  };
+const handleView = (employee) => {
+  navigate(`/view/${employee.id}`);
+};
+
+const handleEdit = (employee) => {
+  navigate(`/edit/${employee.id}`);
+};
 
   const handleDelete = (id) => {
     const updatedEmployees = employees.filter((emp) => emp.id !== id);
